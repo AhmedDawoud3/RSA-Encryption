@@ -99,7 +99,7 @@ Please enter the text you want to decrypt: [Encrypted text here]
 ### Now you'll have to enter *`d`* and *`N`*
 ```
 Your Decrypted text is
-{cryptic text here}
+{decrypted text here}
 ```
 ### Now have decrypted the Encrypted text
 
