@@ -115,10 +115,7 @@ def main():
 def IsPrime(number):
     if number in {0, 1}:
         return False
-    for i in range(2, int(number/2)+1):
-        if number % i == 0:
-            return False
-    return True
+    return all(number % i != 0 for i in range(2, int(number/2)+1))
 
 # To find the greatest common denominator of two numbers
 def gdc(a, b):
@@ -139,8 +136,15 @@ def gdc(a, b):
 
 # Co-prime numbers are numbers that has no common facter
 def IsCoPrime(a, b):
-    return gdc(a, b) == 1
+    return Greater_Common_Divisor(a, b) == 1
 
+# A function to return the greatest common divisor of two numbers
+def Greater_Common_Divisor(a, b):
+    if a < b:
+        return Greater_Common_Divisor(b, a)
+    if b == 0:
+        return a
+    return Greater_Common_Divisor(b, a % b)
 
 if __name__ == '__main__':
     main()
